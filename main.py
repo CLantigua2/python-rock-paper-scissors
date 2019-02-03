@@ -52,17 +52,19 @@ while not user == 9:
             print('Computer chose scissors...computer wins :(')
             losses += 1
 
-# user chooses PAPER
+# user chooses SCISSORS
     if user == 3:
         if computer == 1:
-            print('Computer chose rock...tie!')
-            ties += 1
-        elif computer == 2:
-            print('Computer chose paper...you lose :(')
-            ties += 1
-        else:
-            print('Computer chose scissors...computer wins :(')
+            print('Computer chose rock...computer wins :(')
             losses += 1
+        elif computer == 2:
+            print('Computer chose paper...you win!')
+            wins += 1
+        else:
+            print('Computer chose scissors...its a tie!')
+            ties += 1
+    else:
+        print('Entry not a valid choice')
     # print updated stats
     print("wins: %s, Ties: %s, Losses: %s" % (wins, ties, losses))
 
