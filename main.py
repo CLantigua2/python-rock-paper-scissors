@@ -2,22 +2,26 @@
 import random
 
 # file i/o functions for hostorical results
-# def load_results():
-#    text_file = open("history.txt", "r")
-#    history = text_file.read().split(",")
-#    text_file.close()
-#    return history
 
-# def save_results( w, t, l):
-#    text_file = open('history.txt, 'w')
-#    text_file.write( w + ',' + t + ',' + 1)
-#    text_file.close
+
+def load_results():
+    text_file = open("history.txt", "r")
+    history = text_file.read().split(",")
+    text_file.close()
+    return history
+
+
+def save_results(w, t, l):
+    text_file = open('history.txt', 'w')
+    text_file.write(str(w) + ',' + str(t) + ',' + str(1))
+    text_file.close
+
 
 # welcome message
-# results = load_results()
-wins = 0  # int(results[0])
-ties = 0  # int(retuls[1])
-losses = 0  # int(results[2])
+results = load_results()
+wins = int(results[0])
+ties = int(results[1])
+losses = int(results[2])
 print('Welcome to Rock, Paper, Scissors!')
 print('Wins: %s, Ties: %s, Losses: %s' % (wins, ties, losses))
 print('Pease choose to continue...')
@@ -75,4 +79,4 @@ while not user == 9:
     user = int(input('[1] Rock [2] Paper [3] Scissors [9] Quit\n'))
 
 # game over, save results
-# save_results(wins, ties, losses)
+save_results(wins, ties, losses)
